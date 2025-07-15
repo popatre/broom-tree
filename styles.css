@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+}
+
 body {
     font-family: "Georgia", serif;
     line-height: 1.6;
@@ -817,4 +821,14 @@ textarea:focus {
     .contact-form {
         display: none;
     }
+}
+
+.slide > img {
+    width: 80%;
+    object-fit: contain;
+}
+
+.slick-slider {
+    width: 80%;
+    margin-inline: auto;
 }

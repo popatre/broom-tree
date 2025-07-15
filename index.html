@@ -6,7 +6,447 @@
         <title>
             Broom Forestry and Arb - Professional Tree and Forestry Services
         </title>
-        <link rel="stylesheet" href="styles.css" />
+        <!-- slick -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+        />
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Arial", sans-serif;
+                line-height: 1.6;
+                color: #333;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            /* Header Styles */
+            .header {
+                background: #2c5f2d;
+                color: white;
+                padding: 20px 0;
+            }
+
+            .header-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .logo-image {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .logo-text h1 {
+                font-size: 1.5em;
+                margin-bottom: 5px;
+            }
+
+            .logo-text p {
+                font-size: 0.9em;
+                opacity: 0.9;
+            }
+
+            .contact-info {
+                text-align: right;
+            }
+
+            .badges {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 10px;
+                flex-wrap: wrap;
+            }
+
+            .badge {
+                background: #4a7c59;
+                padding: 5px 10px;
+                border-radius: 15px;
+                font-size: 0.8em;
+                white-space: nowrap;
+            }
+
+            .contact-details p {
+                margin: 5px 0;
+                font-size: 0.9em;
+            }
+
+            /* Hero Section */
+            .hero {
+                background: linear-gradient(
+                        rgba(0, 0, 0, 0.5),
+                        rgba(0, 0, 0, 0.5)
+                    ),
+                    url("https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440574/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.19_1_sdsjej.jpg");
+                background-size: cover;
+                background-position: center;
+                height: 400px;
+                display: flex;
+                align-items: center;
+                color: white;
+                text-align: center;
+                position: relative;
+            }
+
+            .hero-content h2 {
+                font-size: 2.5em;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            }
+
+            .hero-content p {
+                font-size: 1.2em;
+                margin-bottom: 30px;
+            }
+
+            .cta-button {
+                display: inline-block;
+                background: #4a7c59;
+                color: white;
+                padding: 15px 30px;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: background 0.3s;
+            }
+
+            .cta-button:hover {
+                background: #2c5f2d;
+            }
+
+            /* About Section */
+            .about {
+                padding: 60px 0;
+                background: #f8f9fa;
+            }
+
+            .about h2 {
+                text-align: center;
+                font-size: 2.2em;
+                margin-bottom: 40px;
+                color: #2c5f2d;
+            }
+
+            .about-content p {
+                margin-bottom: 20px;
+                font-size: 1.1em;
+                line-height: 1.8;
+            }
+
+            /* Services Section */
+            .services {
+                padding: 60px 0;
+            }
+
+            .services h2 {
+                text-align: center;
+                font-size: 2.2em;
+                margin-bottom: 40px;
+                color: #2c5f2d;
+            }
+
+            .services-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+                gap: 40px;
+                margin-top: 40px;
+            }
+
+            .service-category h3 {
+                color: #4a7c59;
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+
+            .service-category h4 {
+                color: #4a7c59;
+                font-size: 1.2em;
+                margin: 20px 0 10px 0;
+            }
+
+            .service-category ul {
+                list-style: none;
+            }
+
+            .service-category li {
+                margin-bottom: 15px;
+                padding-left: 20px;
+                position: relative;
+            }
+
+            .service-category li:before {
+                content: "✓";
+                color: #4a7c59;
+                font-weight: bold;
+                position: absolute;
+                left: 0;
+            }
+
+            /* Gallery Section - IMPROVED */
+            .gallery {
+                padding: 60px 0;
+                background: #f8f9fa;
+            }
+
+            .gallery h2 {
+                text-align: center;
+                font-size: 2.2em;
+                margin-bottom: 40px;
+                color: #2c5f2d;
+            }
+
+            /* Slick Slider Styles */
+            .slick-slider {
+                margin: 0 auto;
+                max-width: 100%;
+            }
+
+            .slick-slider .slide {
+                padding: 0 10px;
+                outline: none;
+            }
+
+            .slick-slider .slide img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .slick-slider .slide img:hover {
+                transform: scale(1.05);
+            }
+
+            /* Slick Navigation Buttons */
+            .slick-prev,
+            .slick-next {
+                width: 40px;
+                height: 40px;
+                background: #4a7c59 !important;
+                border-radius: 50%;
+                z-index: 10;
+            }
+
+            .slick-prev:before,
+            .slick-next:before {
+                color: white !important;
+                font-size: 20px;
+            }
+
+            .slick-prev {
+                left: -50px;
+            }
+
+            .slick-next {
+                right: -50px;
+            }
+
+            /* Slick Dots */
+            .slick-dots {
+                bottom: -50px;
+            }
+
+            .slick-dots li button:before {
+                color: #4a7c59 !important;
+                font-size: 12px;
+            }
+
+            .slick-dots li.slick-active button:before {
+                color: #2c5f2d !important;
+            }
+
+            /* Testimonials */
+            .testimonials {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 60px;
+            }
+
+            .testimonial {
+                background: white;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .testimonial p {
+                font-style: italic;
+                margin-bottom: 15px;
+                font-size: 1.1em;
+            }
+
+            .testimonial cite {
+                color: #4a7c59;
+                font-weight: bold;
+            }
+
+            /* Contact Section */
+            .contact {
+                padding: 60px 0;
+                background: #2c5f2d;
+                color: white;
+            }
+
+            .contact h2 {
+                text-align: center;
+                font-size: 2.2em;
+                margin-bottom: 40px;
+            }
+
+            .contact-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                gap: 40px;
+                margin-top: 40px;
+            }
+
+            .contact-item {
+                margin-bottom: 30px;
+            }
+
+            .contact-item h3 {
+                color: #a8d5aa;
+                margin-bottom: 10px;
+            }
+
+            .contact-form {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 30px;
+                border-radius: 10px;
+            }
+
+            .contact-form h3 {
+                margin-bottom: 20px;
+                color: #a8d5aa;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                width: 100%;
+                padding: 12px;
+                border: none;
+                border-radius: 5px;
+                font-size: 1em;
+            }
+
+            .submit-button {
+                background: #4a7c59;
+                color: white;
+                padding: 15px 30px;
+                border: none;
+                border-radius: 5px;
+                font-size: 1em;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            .submit-button:hover {
+                background: #a8d5aa;
+            }
+
+            /* Footer */
+            .footer {
+                background: #1a3a1c;
+                color: white;
+                padding: 30px 0;
+                text-align: center;
+            }
+
+            .footer p {
+                margin: 10px 0;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .header-content {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .contact-info {
+                    text-align: center;
+                    margin-top: 20px;
+                }
+
+                .badges {
+                    justify-content: center;
+                }
+
+                .hero-content h2 {
+                    font-size: 1.8em;
+                }
+
+                .services-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .contact-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .slick-prev {
+                    left: -30px;
+                }
+
+                .slick-next {
+                    right: -30px;
+                }
+
+                .slick-slider .slide img {
+                    height: 250px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .slick-prev {
+                    left: -20px;
+                }
+
+                .slick-next {
+                    right: -20px;
+                }
+
+                .slick-slider .slide img {
+                    height: 200px;
+                }
+            }
+        </style>
     </head>
     <body>
         <!-- Header -->
@@ -50,7 +490,6 @@
 
         <!-- Hero Banner -->
         <section class="hero">
-            <div class="hero-overlay"></div>
             <div class="container">
                 <div class="hero-content">
                     <h2>
@@ -154,10 +593,236 @@
             </div>
         </section>
 
-        <!-- Gallery (Coming Soon) -->
+        <!-- Gallery -->
         <section class="gallery">
             <div class="container">
-                <h2>Gallery (Coming Soon)</h2>
+                <h2>Gallery</h2>
+
+                <div class="slick-slider" id="main-carousel">
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440574/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.19_1_sdsjej.jpg"
+                            alt="Tree Surgery Work"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440572/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.19_2_wqyr7k.jpg"
+                            alt="Forestry Equipment"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440574/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.19_3_ib8dt4.jpg"
+                            alt="Tree Felling"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440572/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.19_4_apvkfl.jpg"
+                            alt="Professional Tree Services"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440577/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.19_5_idgxdh.jpg"
+                            alt="Woodland Management"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440566/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.19_n998zi.jpg"
+                            alt="Arboriculture Work"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440573/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.20_1_xobiin.jpg"
+                            alt="Tree Maintenance"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440577/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.20_2_j0q1xb.jpg"
+                            alt="Stump Grinding"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440572/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.20_3_ilgfkg.jpg"
+                            alt="Emergency Tree Services"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440576/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.20_vi9cfr.jpg"
+                            alt="Tree Pruning"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440573/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.21_1_ohbouj.jpg"
+                            alt="Heavy Machinery"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440575/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.21_kd3lbd.jpg"
+                            alt="Land Clearance"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440566/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.29_1_agvgjv.jpg"
+                            alt="Forestry Operations"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440566/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.29_2_ebgkmp.jpg"
+                            alt="Tree Services"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440567/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.29_ipbzzq.jpg"
+                            alt="Professional Work"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440578/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.30_1_ks9y1m.jpg"
+                            alt="Tree Care"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440571/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.30_2_fz7ial.jpg"
+                            alt="Equipment in Action"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440577/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.30_3_xjhj4f.jpg"
+                            alt="Tree Dismantling"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440570/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.30_4_taqutv.jpg"
+                            alt="Quality Workmanship"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440574/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.30_5_lrveey.jpg"
+                            alt="Safety First"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440568/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.30_6_x11otc.jpg"
+                            alt="Precision Work"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440575/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.30_7_gpsmul.jpg"
+                            alt="Expert Team"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440570/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.30_8_kaobl4.jpg"
+                            alt="Reliable Service"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440567/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.30_9_kyosoa.jpg"
+                            alt="Modern Equipment"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440576/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.30_bfmhf5.jpg"
+                            alt="Professional Results"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440577/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.31_1_shgnrx.jpg"
+                            alt="Comprehensive Services"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440572/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.31_2_auigyb.jpg"
+                            alt="Skilled Operators"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440577/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.31_3_mjbig8.jpg"
+                            alt="Efficient Work"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440570/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.31_4_ppzrvh.jpg"
+                            alt="Tree Management"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440575/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.31_5_ivxvxb.jpg"
+                            alt="Site Clearance"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440570/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.31_6_lgbstd.jpg"
+                            alt="Environmental Care"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440575/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.31_7_b6k6bb.jpg"
+                            alt="Woodland Solutions"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440571/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.31_8_vcignf.jpg"
+                            alt="Complete Service"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440566/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.31_9_rmddfq.jpg"
+                            alt="Quality Assurance"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440569/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.31_kc1dr2.jpg"
+                            alt="Expert Solutions"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440568/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.32_1_r4enbo.jpg"
+                            alt="Professional Equipment"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://res.cloudinary.com/dyuhtpg5y/image/upload/v1752440566/broom-tree/WhatsApp_Image_2025-07-03_at_22.15.32_2_vbv6om.jpg"
+                            alt="Trusted Service"
+                        />
+                    </div>
+                </div>
+
                 <div class="testimonials">
                     <div class="testimonial">
                         <p>
@@ -204,10 +869,19 @@
 
                     <div class="contact-form">
                         <h3>Get a Free Quote</h3>
-                        <form>
+                        <form
+                            action="https://api.web3forms.com/submit"
+                            method="POST"
+                        >
+                            <input
+                                type="hidden"
+                                name="access_key"
+                                value="847a1aa7-0558-44bf-a992-e443ce024c8a"
+                            />
                             <div class="form-group">
                                 <input
                                     type="text"
+                                    name="name"
                                     placeholder="Your Name"
                                     required
                                 />
@@ -215,51 +889,70 @@
                             <div class="form-group">
                                 <input
                                     type="email"
+                                    name="email"
                                     placeholder="Email Address"
                                     required
                                 />
                             </div>
                             <div class="form-group">
-                                <input type="tel" placeholder="Phone Number" />
+                                <input
+                                    type="tel"
+                                    placeholder="Phone Number"
+                                    name="phone"
+                                />
                             </div>
                             <div class="form-group">
                                 <input
                                     type="text"
+                                    name="location"
                                     placeholder="Location"
                                     required
                                 />
                             </div>
                             <div class="form-group">
-                                <select required>
-                                    <option value="">
+                                <select required name="service">
+                                    <option value="" name="service">
                                         Select Service Needed
                                     </option>
-                                    <option value="tree-felling">
+                                    <option value="tree-felling" name="felling">
                                         Tree Felling
                                     </option>
-                                    <option value="tree-dismantling">
+                                    <option
+                                        value="tree-dismantling"
+                                        name="dismantling"
+                                    >
                                         Tree Dismantling
                                     </option>
-                                    <option value="pruning">Pruning</option>
+                                    <option value="pruning" name="pruning">
+                                        Pruning
+                                    </option>
                                     <option value="stump-grinding">
                                         Stump Grinding
                                     </option>
-                                    <option value="emergency">
+                                    <option name="emergency" value="emergency">
                                         Emergency Call-Out
                                     </option>
-                                    <option value="forestry">
+                                    <option name="forestry" value="forestry">
                                         Forestry Services
                                     </option>
-                                    <option value="other">Other</option>
+                                    <option name="other" value="other">
+                                        Other
+                                    </option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <textarea
+                                    name="message"
                                     placeholder="Tell us about your project..."
                                     rows="4"
                                     required
                                 ></textarea>
                             </div>
+                            <input
+                                type="hidden"
+                                name="redirect"
+                                value="https://web3forms.com/success"
+                            />
                             <button type="submit" class="submit-button">
                                 Send Message
                             </button>
@@ -283,5 +976,48 @@
                 </p>
             </div>
         </footer>
+
+        <script
+            type="text/javascript"
+            src="//code.jquery.com/jquery-1.11.0.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"
+        ></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#main-carousel").slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    dots: true,
+                    infinite: true,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                            },
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                dots: false,
+                            },
+                        },
+                    ],
+                });
+            });
+        </script>
     </body>
 </html>
