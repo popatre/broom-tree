@@ -3,9 +3,142 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Primary SEO Meta Tags -->
         <title>
-            Broom Forestry and Arb - Professional Tree and Forestry Services
+            Tree Surgery & Forestry Services Dumfries & Galloway | Broom
+            Forestry and Arb
         </title>
+        <meta
+            name="description"
+            content="Professional tree surgery, forestry services & 24/7 emergency call-out in Dumfries & Galloway, South West Scotland & Northern Cumbria. Family-run, fully qualified with 20 years experience. Free quotes available."
+        />
+        <meta
+            name="keywords"
+            content="tree surgery, tree felling, tree dismantling, stump grinding, forestry services, arboriculture, Dumfries, Galloway, Annan, Cumbria, emergency tree services, woodland management"
+        />
+        <meta name="author" content="Broom Forestry and Arb" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://broomforestryarb.com/" />
+        <meta
+            property="og:title"
+            content="Professional Tree Surgery & Forestry Services | Broom Forestry and Arb"
+        />
+        <meta
+            property="og:description"
+            content="Family-run tree surgery and forestry services in Dumfries & Galloway. 24/7 emergency call-out, fully qualified team with 20 years experience."
+        />
+        <meta
+            property="og:image"
+            content="https://broomforestryarb.com/images/logo.jpeg"
+        />
+        <meta property="og:locale" content="en_GB" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://broomforestryarb.com/" />
+        <meta
+            property="twitter:title"
+            content="Professional Tree Surgery & Forestry Services | Broom Forestry and Arb"
+        />
+        <meta
+            property="twitter:description"
+            content="Family-run tree surgery and forestry services in Dumfries & Galloway. 24/7 emergency call-out, fully qualified team with 20 years experience."
+        />
+        <meta
+            property="twitter:image"
+            content="https://broomforestryarb.com/images/logo.jpeg"
+        />
+
+        <!-- Additional SEO Meta Tags -->
+        <meta name="geo.region" content="GB-SCT" />
+        <meta name="geo.placename" content="Dumfries and Galloway" />
+        <meta name="geo.position" content="54.9896;-3.2646" />
+        <meta name="ICBM" content="54.9896, -3.2646" />
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://broomforestryarb.com/" />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+
+        <!-- Schema.org structured data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "Broom Forestry and Arb",
+                "image": "https://broomforestryarb.com/images/logo.jpeg",
+                "description": "Professional tree surgery and forestry services in Dumfries & Galloway, South West Scotland and Northern Cumbria. Family-run business with 20 years experience.",
+                "url": "https://broomforestryarb.com",
+                "telephone": "+44 1461 620363",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Sycamore House, Broomfarm Estate",
+                    "addressLocality": "Annan",
+                    "postalCode": "DG12 5PF",
+                    "addressCountry": "GB"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 54.9896,
+                    "longitude": -3.2646
+                },
+                "openingHours": "Mo-Su 00:00-23:59",
+                "priceRange": "££",
+                "serviceArea": {
+                    "@type": "GeoCircle",
+                    "geoMidpoint": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 54.9896,
+                        "longitude": -3.2646
+                    },
+                    "geoRadius": "50000"
+                },
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Tree Surgery and Forestry Services",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Tree Surgery",
+                                "description": "Professional tree felling, dismantling, and pruning services"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Forestry Services",
+                                "description": "Woodland management, windblown clearance, and land vegetation clearance"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Emergency Tree Services",
+                                "description": "24/7 emergency call-out for storm damage and dangerous trees"
+                            }
+                        }
+                    ]
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "5.0",
+                    "reviewCount": "2"
+                }
+            }
+        </script>
         <!-- slick -->
         <link
             rel="stylesheet"
@@ -566,6 +699,7 @@
             $(document).ready(function () {
                 $("#main-carousel").slick({
                     slidesToShow: 3,
+                    lazyLoad: "ondemand",
                     slidesToScroll: 1,
                     autoplay: true,
                     autoplaySpeed: 3000,
